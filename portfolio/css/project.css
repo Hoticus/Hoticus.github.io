@@ -5,7 +5,8 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 html {
   font-size: 10px;
@@ -41,6 +42,8 @@ a {
   left: 0;
   width: 100%;
   padding: 30px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
   z-index: 1;
 }
@@ -53,10 +56,16 @@ a {
   }
 }
 .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .menu__link {
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
   font-size: 1.5rem;
   color: white;
@@ -71,13 +80,16 @@ a {
 .preview {
   height: 100vh;
   display: grid;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1.5fr 0.25fr 1.25fr;
   grid-template-areas: ". preview__title ." ". preview__order-button ." ". preview__button .";
   position: relative;
   /* idk why do i need this but without it box-shadow doesnt work (i have tried z-index too) */
-  box-shadow: 0px 5px 10px 0px rgba(199, 199, 199, 0.75);
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(199, 199, 199, 0.75);
+          box-shadow: 0px 5px 10px 0px rgba(199, 199, 199, 0.75);
 }
 .preview::after {
   content: '';
@@ -99,7 +111,8 @@ a {
   color: white;
   font-family: 'Ubuntu', 'sans-serif';
   text-transform: uppercase;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 .preview__order-button {
   grid-area: preview__order-button;
@@ -109,11 +122,14 @@ a {
 }
 .preview__button {
   grid-area: preview__button;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   justify-self: center;
   margin-bottom: 40px;
   font-size: 5rem;
   color: #fff;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
 }
 .preview__button_scrolled {
@@ -140,8 +156,12 @@ a {
 }
 .about-me__header {
   grid-area: about-me__header;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 100px;
 }
 .about-me__content {
@@ -171,8 +191,13 @@ a {
   font-size: 4rem;
   font-family: 'Ubuntu', 'sans-serif';
   text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .title::after {
   content: '';
@@ -194,8 +219,12 @@ a {
 .trust__header {
   grid-area: trust__header;
   margin-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .trust__title {
   text-align: center;
@@ -234,8 +263,12 @@ a {
 .why-me__header {
   grid-area: why-me__header;
   margin-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .why-me__title {
   text-align: center;
@@ -268,7 +301,8 @@ a {
 }
 .skills {
   background-color: #fbfbfb;
-  box-shadow: 0px 0px 5px 5px rgba(199, 199, 199, 0.75);
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(199, 199, 199, 0.75);
+          box-shadow: 0px 0px 5px 5px rgba(199, 199, 199, 0.75);
   position: relative;
   /* idk why do i need this but without it box-shadow doesnt work (i have tried z-index too) */
   display: grid;
@@ -278,8 +312,12 @@ a {
 }
 .skills__header {
   grid-area: skills__header;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .skills__content {
   grid-area: skills__content;
@@ -308,12 +346,18 @@ a {
 .block {
   background-color: #f64639;
   border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 10px;
 }
 .block__title {
-  align-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
   color: white;
   font-size: 3rem;
 }
@@ -374,9 +418,15 @@ a {
   margin: 20px;
   border-radius: 15px;
   background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  box-shadow: 0px 0px 5px 5px rgba(199, 199, 199, 0.75);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(199, 199, 199, 0.75);
+          box-shadow: 0px 0px 5px 5px rgba(199, 199, 199, 0.75);
   display: grid;
   grid-template-rows: 0.4fr 2.6fr;
 }
@@ -388,7 +438,8 @@ a {
           filter: blur(5px) brightness(60%);
 }
 .card-box__header {
-  align-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
   margin: 10px;
 }
 .card-box__content {
@@ -403,9 +454,12 @@ a {
 }
 .card-box__text {
   position: absolute;
-  align-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
   margin: 15px;
   opacity: 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
   max-height: 100%;
   max-width: 100%;
@@ -424,41 +478,49 @@ a {
      object-fit: cover;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  transition: all 0.3s;
-}
-.picture__img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .order {
   background-color: #fbfbfb;
-  box-shadow: 0px 0px 5px 5px rgba(199, 199, 199, 0.75);
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(199, 199, 199, 0.75);
+          box-shadow: 0px 0px 5px 5px rgba(199, 199, 199, 0.75);
   display: grid;
   grid-template-columns: 0.625fr 1.75fr 0.625fr;
   grid-template-rows: 1fr 1fr;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   grid-template-areas: ". order__header ." ". order__content .";
   padding: 50px;
 }
 .order__header {
   grid-area: order__header;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .order__title {
   text-align: center;
 }
 .order__content {
   grid-area: order__content;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100%;
 }
 .order__button {
@@ -479,13 +541,21 @@ a {
 }
 .button {
   background-color: #f64639;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 15px;
   color: white;
   font-size: 2rem;
   font-family: 'Ubuntu', 'sans-serif';
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .button:hover {
@@ -496,10 +566,19 @@ a {
   width: 100%;
   color: white;
   padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
 }
 .footer__link {

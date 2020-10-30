@@ -1,12 +1,1 @@
-$(document).ready(function(){
-  $("#about-me").css({'opacity' : '0'});
-  $("#trust").css({'opacity' : '0'});
-  $("#why-me").css({'opacity' : '0'});
-});
-$(window).on("scroll", function() {
-  $("header").toggleClass("header_scrolled", $(this).scrollTop() >= 1);
-  $("#preview__button").toggleClass("preview__button_scrolled", $(this).scrollTop() >= 1);
-  if ( $(this).scrollTop() > 200 ) $("#about-me").animate({'opacity':'1'},500);
-  if ( $(this).scrollTop() > 500 ) $("#trust").animate({'opacity':'1'},500);
-  if ( $(this).scrollTop() > 800 ) $("#why-me").animate({'opacity':'1'},500);
-});
+document.querySelector("#about-me").style.opacity=0,document.querySelector("#trust").style.opacity=0,document.querySelector("#why-me").style.opacity=0,window.addEventListener("scroll",function(){document.querySelector("header").classList.toggle("header_scrolled",document.documentElement.scrollTop>=1),document.querySelector("#preview__button").classList.toggle("preview__button_scrolled",document.documentElement.scrollTop>=1),document.documentElement.scrollTop>200&&(document.querySelector("#about-me").animate({opacity:"1"},500),setTimeout(function(){document.querySelector("#about-me").style.opacity=1},500)),document.documentElement.scrollTop>500&&(document.querySelector("#trust").animate({opacity:"1"},500),setTimeout(function(){document.querySelector("#trust").style.opacity=1},500)),document.documentElement.scrollTop>800&&(document.querySelector("#why-me").animate({opacity:"1"},500),setTimeout(function(){document.querySelector("#why-me").style.opacity=1},500))});
